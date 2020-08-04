@@ -26,19 +26,20 @@ function onsubmit(s){
         li.appendChild(document.createTextNode(`${userinput.value}`));
         remove.appendChild(document.createTextNode('Delete'));
         remove.classList.add('remove');
-
+        
         list.appendChild(li);
         li.appendChild(remove);
 
         userinput.value = '';
 
-        remove.addEventListener('click', function(r){
+        remove.onclick = function(){
             li.remove();
-        })
+            console.log('removed');
+        };
 
-        li.addEventListener('click', function(c){
+        li.onclick = function(){
             li.classList.toggle('li-check');
-        })
+        }
     }
 
 }
